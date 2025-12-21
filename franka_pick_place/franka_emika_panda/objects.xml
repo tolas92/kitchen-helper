@@ -1,0 +1,11 @@
+<mujoco>
+  <worldbody>
+    <body name="cube" pos="0.5 0 0.025">
+      <geom type="box" size="0.025 0.025 0.025"
+            mass="0.05"
+            rgba="1 0 0 1"/>
+    </body>
+
+    <site name="target" pos="0.6 0.2 0.025" size="0.02"/>
+  </worldbody>
+</mujoco>

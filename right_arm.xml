@@ -1,0 +1,106 @@
+<mujoco>
+  <option gravity="0 0 -9.81"/>
+  <default>
+  <joint
+      damping="50"
+      armature="0.05"
+      limited="true"/>
+
+  <geom
+      friction="1 0.01 0.001"
+      condim="4"/>
+
+  <motor
+      ctrlrange="-1 1"
+      ctrllimited="true"/>
+</default>
+
+
+  <asset>
+    <!-- Meshes -->
+    <mesh name="base_link_mesh" file="mark_1/meshes/base_link.STL"/>
+    <mesh name="right_shoulder_mesh" file="mark_1/meshes/right_shoulder_link.STL"/>
+    <mesh name="right_deltoid_mesh" file="mark_1/meshes/right_deltoid_link.STL"/>
+    <mesh name="right_forearm_mesh" file="mark_1/meshes/right_forearm_link.STL"/>
+    <mesh name="right_wrist_mesh" file="mark_1/meshes/right_wrist_link.STL"/>
+
+    <!-- Standard MuJoCo blue checker -->
+    <texture
+        name="grid"
+        type="2d"
+        builtin="checker"
+        width="300"
+        height="300"
+        rgb1="0.1 0.2 0.3"
+        rgb2="0.2 0.3 0.4"/>
+
+    <material
+        name="floor_mat"
+        texture="grid"
+        texrepeat="8 8"
+        reflectance="0.0"/>
+  </asset>
+
+  <worldbody>
+    <!-- Floor -->
+    <geom name="floor"
+          type="plane"
+          size="5 5 0.1"
+          material="floor_mat"/>
+
+    <!-- Lights (VALID MJCF) -->
+    <light name="sun"
+           pos="0 0 5"
+           dir="0 0 -1"
+           diffuse="1 1 1"
+           specular="0.3 0.3 0.3"/>
+
+    <light name="fill"
+           pos="5 -5 3"
+           dir="-1 1 -0.5"
+           diffuse="0.4 0.4 0.4"
+           specular="0 0 0"/>
+
+    <!-- BASE -->
+    <body name="base" pos="0 0 0.5">
+      <geom type="mesh" mesh="base_link_mesh" mass="5"/>
+
+      <!-- RIGHT SHOULDER -->
+      <body name="right_shoulder"
+            pos="0.00836954205747536 -0.133606477325328 0.26465">
+        <joint name="right_shoulder_joint"
+               type="hinge"
+               axis="-0.0143182523264597 0.999897488570861 0"
+               range="-1.57 1.57"/>
+        <geom type="mesh" mesh="right_shoulder_mesh" mass="0.8"/>
+
+        <!-- RIGHT DELTOID -->
+        <body name="right_deltoid"
+              pos="0.0260319094907936 -0.0181291282492522 0.0157130544878568">
+          <joint name="right_deltoid_joint"
+                 type="hinge"
+                 axis="-0.0143390356701151 0.999897190743154 0"
+                 range="-1.2 1.2"/>
+          <geom type="mesh" mesh="right_deltoid_mesh" mass="0.5"/>
+
+          <!-- RIGHT FOREARM -->
+          <body name="right_forearm"
+                pos="0.23445123955499 0.0180119617798703 0.0197905658655673">
+            <joint name="right_forearm_joint"
+                   type="hinge"
+                   axis="0.0538274515179134 0.998550251846689 0"
+                   range="-1.57 1.57"/>
+            <geom type="mesh" mesh="right_forearm_mesh" mass="0.3"/>
+
+            <!-- RIGHT WRIST (fixed joint) -->
+            <body name="right_wrist"
+                  pos="0.213139944643721 -0.00499437028651983 -0.00148091509216837">
+              <geom type="mesh" mesh="right_wrist_mesh"/>
+            </body>
+
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+</mujoco>

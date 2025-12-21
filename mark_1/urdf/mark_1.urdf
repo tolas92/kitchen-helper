@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="mark_1">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.0145534440387505 -0.000194962536281741 0.166797966297387"
+        rpy="0 0 0" />
+      <mass
+        value="0.45300834254569" />
+      <inertia
+        ixx="0.000649039064047301"
+        ixy="2.091334364037E-07"
+        ixz="2.71984437268521E-08"
+        iyy="0.000262489787577035"
+        iyz="-9.75821657075913E-08"
+        izz="0.000457894086631493" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mark_1/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mark_1/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="right_shoulder_link">
+    <inertial>
+      <origin
+        xyz="-0.00226940414982798 0.000197605198601195 0.0070273931795623"
+        rpy="0 0 0" />
+      <mass
+        value="0.00776072596587416" />
+      <inertia
+        ixx="2.08656859916159E-06"
+        ixy="1.92166683726886E-08"
+        ixz="-2.6016315266565E-10"
+        iyy="7.44932189618317E-07"
+        iyz="-2.40733879720067E-12"
+        izz="1.96444856027833E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mark_1/meshes/right_shoulder_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.96078431372549 0.96078431372549 0.964705882352941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mark_1/meshes/right_shoulder_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_shoulder_link"
+    type="continuous">
+    <origin
+      xyz="0.00836954205747536 -0.133606477325328 0.26465"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_shoulder_link" />
+    <axis
+      xyz="-0.0143182523264597 0.999897488570861 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0.2"
+      velocity="0.5" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="right_deltoid_link">
+    <inertial>
+      <origin
+        xyz="0.128849589151912 0.0195646356207245 0.000593631418684515"
+        rpy="0 0 0" />
+      <mass
+        value="0.153352889757505" />
+      <inertia
+        ixx="3.28699113725282E-05"
+        ixy="-2.2451947361191E-06"
+        ixz="1.33745075987347E-08"
+        iyy="0.000195379842766236"
+        iyz="3.4238347332715E-10"
+        izz="0.000216767932708973" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mark_1/meshes/right_deltoid_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mark_1/meshes/right_deltoid_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_deloid_joint"
+    type="continuous">
+    <origin
+      xyz="0.0260319094907936 -0.0181291282492522 0.0157130544878568"
+      rpy="0.000772947059357683 -0.0538473113005892 -4.16010184655721E-05" />
+    <parent
+      link="right_shoulder_link" />
+    <child
+      link="right_deltoid_link" />
+    <axis
+      xyz="-0.0143390356701151 0.999897190743154 0" />
+  </joint>
+  <link
+    name="right_forearm_link">
+    <inertial>
+      <origin
+        xyz="0.122134336053526 0.0125693022043887 -0.000678845915413492"
+        rpy="0 0 0" />
+      <mass
+        value="0.14814148096472" />
+      <inertia
+        ixx="3.68661962093057E-05"
+        ixy="8.23700139549119E-06"
+        ixz="-1.01061034843873E-09"
+        iyy="0.000189487070117688"
+        iyz="-6.01673996661595E-09"
+        izz="0.000215257194207411" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mark_1/meshes/right_forearm_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mark_1/meshes/right_forearm_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_forearm_joint"
+    type="continuous">
+    <origin
+      xyz="0.23445123955499 0.0180119617798703 0.0197905658655673"
+      rpy="-1.57079632678319 0.0538534786393583 -0.0151291696345527" />
+    <parent
+      link="right_deltoid_link" />
+    <child
+      link="right_forearm_link" />
+    <axis
+      xyz="0.0538274515179134 0.998550251846689 0" />
+  </joint>
+  <link
+    name="right_wrist_link">
+    <inertial>
+      <origin
+        xyz="0.0729999358896654 -0.000374534250136657 0.00260190098159474"
+        rpy="0 0 0" />
+      <mass
+        value="0.0819274846186163" />
+      <inertia
+        ixx="1.25837683608781E-05"
+        ixy="4.68632542953194E-07"
+        ixz="-2.24569336152737E-08"
+        iyy="1.66271865379447E-05"
+        iyz="-1.28377562701556E-06"
+        izz="8.20757200785382E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mark_1/meshes/right_wrist_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.96078431372549 0.96078431372549 0.964705882352941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mark_1/meshes/right_wrist_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_wrist_joint"
+    type="fixed">
+    <origin
+      xyz="0.213139944643721 -0.00499437028651983 -0.00148091509216837"
+      rpy="1.57252517997492 -0.0150502420287462 -0.0399168424621424" />
+    <parent
+      link="right_forearm_link" />
+    <child
+      link="right_wrist_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="left_shoulder_link">
+    <inertial>
+      <origin
+        xyz="0.0100820121963621 3.21565501376908E-05 0.0140763800097504"
+        rpy="0 0 0" />
+      <mass
+        value="0.0416683528776036" />
+      <inertia
+        ixx="4.14123051689716E-06"
+        ixy="5.27090995006742E-08"
+        ixz="-6.84021931497344E-09"
+        iyy="8.06617329610891E-06"
+        iyz="-3.53546700986392E-10"
+        izz="7.96379455038323E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mark_1/meshes/left_shoulder_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mark_1/meshes/left_shoulder_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_shoulder_joint"
+    type="continuous">
+    <origin
+      xyz="0.00836954205747529 0.125393522674672 0.26465"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_shoulder_link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="left_deltoid_link">
+    <inertial>
+      <origin
+        xyz="0.124024733494955 0.0156228510438641 0.000558423480873482"
+        rpy="0 0 0" />
+      <mass
+        value="0.153352891665706" />
+      <inertia
+        ixx="3.2888200421224E-05"
+        ixy="2.83065406830542E-06"
+        ixz="1.33792715731048E-08"
+        iyy="0.000195361559107541"
+        iyz="-7.51714169902756E-11"
+        izz="0.000216767937999963" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mark_1/meshes/left_deltoid_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.96078431372549 0.96078431372549 0.964705882352941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mark_1/meshes/left_deltoid_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_deltoid_joint"
+    type="continuous">
+    <origin
+      xyz="0.0303911380004462 -0.0190159079205942 0.0157130544878571"
+      rpy="0.000150992773042568 0.00893980096423907 0" />
+    <parent
+      link="left_shoulder_link" />
+    <child
+      link="left_deltoid_link" />
+    <axis
+      xyz="0.016887124525697 0.999857402345581 0" />
+  </joint>
+  <link
+    name="left_forearm_link">
+    <inertial>
+      <origin
+        xyz="0.120246108073193 0.0201297112705999 -0.000692209828605683"
+        rpy="0 0 0" />
+      <mass
+        value="0.15003100677213" />
+      <inertia
+        ixx="3.6493969163792E-05"
+        ixy="-1.38773095772672E-06"
+        ixz="-6.30423239864033E-10"
+        iyy="0.000189991785391294"
+        iyz="-6.068503799755E-09"
+        izz="0.00021530238152489" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mark_1/meshes/left_forearm_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.96078431372549 0.96078431372549 0.964705882352941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mark_1/meshes/left_forearm_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_forearm_joint"
+    type="continuous">
+    <origin
+      xyz="0.229522625960475 0.0107738621384627 0.0197554359440348"
+      rpy="-1.57079632679212 -0.00894846270497469 -0.0440035216278062" />
+    <parent
+      link="left_deltoid_link" />
+    <child
+      link="left_forearm_link" />
+    <axis
+      xyz="-0.00894834328925879 0.999959962774699 0" />
+  </joint>
+  <link
+    name="left_wrist_link">
+    <inertial>
+      <origin
+        xyz="0.0736137145660912 -0.00518259162612339 -0.000617542616893119"
+        rpy="0 0 0" />
+      <mass
+        value="0.081361435624521" />
+      <inertia
+        ixx="1.25069415058608E-05"
+        ixy="-9.49132113578202E-08"
+        ixz="6.69815436451905E-08"
+        iyy="1.6850744398768E-05"
+        iyz="-1.63218337227666E-07"
+        izz="8.00570986524841E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mark_1/meshes/left_wrist_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mark_1/meshes/left_wrist_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_wrist_joint"
+    type="continuous">
+    <origin
+      xyz="0.213033328995519 0.00839228163252015 -0.00149738707278493"
+      rpy="1.57252666288078 -0.0440527025150813 0.0228349161797588" />
+    <parent
+      link="left_forearm_link" />
+    <child
+      link="left_wrist_link" />
+    <axis
+      xyz="-0.998933513376794 0.0440101507770613 -0.0139621803911481" />
+  </joint>
+  <link
+    name="neck_link">
+    <inertial>
+      <origin
+        xyz="0.0449917227963332 0.0183036854439724 -0.00401375821834365"
+        rpy="0 0 0" />
+      <mass
+        value="0.0411023044246906" />
+      <inertia
+        ixx="3.98709197086215E-06"
+        ixy="-1.30896849077331E-10"
+        ixz="-5.55903517254238E-08"
+        iyy="7.03835674550507E-06"
+        iyz="1.8362131369825E-08"
+        izz="9.09062038282917E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mark_1/meshes/neck_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.96078431372549 0.96078431372549 0.964705882352941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mark_1/meshes/neck_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="neck_joint"
+    type="continuous">
+    <origin
+      xyz="-0.056731944102393 -0.0191928309605353 0.34709664162935"
+      rpy="0.00872664625997133 0 0.000609497858157523" />
+    <parent
+      link="base_link" />
+    <child
+      link="neck_link" />
+    <axis
+      xyz="0 0.999961923064171 -0.00872653549837362" />
+  </joint>
+  <link
+    name="head_link">
+    <inertial>
+      <origin
+        xyz="0.106754961718805 0.0212170359121892 0.00459046928570417"
+        rpy="0 0 0" />
+      <mass
+        value="0.0502731285182171" />
+      <inertia
+        ixx="3.59991946514163E-05"
+        ixy="1.63631731355724E-06"
+        ixz="-1.89758244731218E-07"
+        iyy="1.18232226690597E-05"
+        iyz="1.39569400099957E-07"
+        izz="2.76092624697605E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mark_1/meshes/head_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.96078431372549 0.96078431372549 0.964705882352941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mark_1/meshes/head_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="head_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="neck_link" />
+    <child
+      link="head_link" />
+    <axis
+      xyz="0.0135524341041437 -0.00872573406687014 -0.999870088108874" />
+  </joint>
+</robot>

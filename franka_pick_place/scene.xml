@@ -1,0 +1,4 @@
+<mujoco>
+  <include file="C:/Users/tolasing/Desktop/mujoco_ws/franka_pick_place/franka_fr3/scene.xml"/>
+  <include file="objects.xml"/>
+</mujoco>
