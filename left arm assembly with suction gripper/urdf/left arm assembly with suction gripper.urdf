@@ -1,0 +1,630 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="left arm assembly with suction gripper">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.00350315836373187 1.06356984554377E-05 0.0214871579373744"
+        rpy="0 0 0" />
+      <mass
+        value="0.0131045219761913" />
+      <inertia
+        ixx="4.34361970915028E-06"
+        ixy="-8.70743295887151E-10"
+        ixz="-1.55795588839868E-08"
+        iyy="3.95359628277592E-06"
+        iyz="6.29841632276515E-12"
+        izz="2.55913550058721E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://left arm assembly with suction gripper/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://left arm assembly with suction gripper/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="shoulder_motor_link">
+    <inertial>
+      <origin
+        xyz="-0.0130238771425404 1.44546689873071E-06 -0.0182831079509093"
+        rpy="0 0 0" />
+      <mass
+        value="0.0339076301202396" />
+      <inertia
+        ixx="2.05435456932193E-06"
+        ixy="1.02463951456412E-09"
+        ixz="5.95632141631701E-08"
+        iyy="5.99935663007104E-06"
+        iyz="4.35282688066523E-10"
+        izz="7.3215393629638E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://left arm assembly with suction gripper/meshes/shoulder_motor_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.6 0.6 0.6 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://left arm assembly with suction gripper/meshes/shoulder_motor_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="shoudler_motor_joint"
+    type="fixed">
+    <origin
+      xyz="0.0250495307078394 -3.15188165906991E-05 0.0401387838837576"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="shoulder_motor_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="shoulder_link">
+    <inertial>
+      <origin
+        xyz="-0.000407496964707939 5.24581642142447E-07 -0.0471396986796234"
+        rpy="0 0 0" />
+      <mass
+        value="0.0146449319488736" />
+      <inertia
+        ixx="3.82645896476309E-06"
+        ixy="1.53518045320358E-07"
+        ixz="3.88844706608963E-09"
+        iyy="2.51126250441366E-06"
+        iyz="-1.3088547662894E-09"
+        izz="4.23742597235457E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://left arm assembly with suction gripper/meshes/shoulder_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.666666666666667 0.698039215686274 0.768627450980392 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://left arm assembly with suction gripper/meshes/shoulder_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="shoulder_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="shoulder_motor_link" />
+    <child
+      link="shoulder_link" />
+    <axis
+      xyz="-0.00872653549837375 0 -0.999961923064172" />
+  </joint>
+  <link
+    name="deltoid_motor_link">
+    <inertial>
+      <origin
+        xyz="0.000150864332334175 0.0174534805321616 0.0128635534321402"
+        rpy="0 0 0" />
+      <mass
+        value="0.033907629670835" />
+      <inertia
+        ixx="5.99944957970211E-06"
+        ixy="1.10990659498675E-08"
+        ixz="9.01999024052376E-10"
+        iyy="7.32208428853435E-06"
+        iyz="-1.36794703535408E-08"
+        izz="2.05371652943078E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://left arm assembly with suction gripper/meshes/deltoid_motor_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.6 0.6 0.6 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://left arm assembly with suction gripper/meshes/deltoid_motor_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="deltoid_motor_joint"
+    type="fixed">
+    <origin
+      xyz="0.00125192169092746 -0.0168373829098358 -0.0800783097554347"
+      rpy="0.00107419573743687 0.00693152129937256 0.123408122562873" />
+    <parent
+      link="shoulder_link" />
+    <child
+      link="deltoid_motor_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="deltoid_link">
+    <inertial>
+      <origin
+        xyz="0.0561078238324793 0.0169280393721852 0.0450816189518283"
+        rpy="0 0 0" />
+      <mass
+        value="0.0710702921940885" />
+      <inertia
+        ixx="1.5268670070304E-05"
+        ixy="-2.56847686288861E-07"
+        ixz="-3.43267066252E-06"
+        iyy="1.44071154904417E-05"
+        iyz="-9.3536456434193E-08"
+        izz="1.67678692653827E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://left arm assembly with suction gripper/meshes/deltoid_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.666666666666667 0.698039215686274 0.768627450980392 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://left arm assembly with suction gripper/meshes/deltoid_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="deltoid_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="deltoid_motor_link" />
+    <child
+      link="deltoid_link" />
+    <axis
+      xyz="-0.00872653549837265 -0.999961922950372 1.5086101193145E-05" />
+  </joint>
+  <link
+    name="forearm_motor_link">
+    <inertial>
+      <origin
+        xyz="-0.0127110305283054 0.0175655291343444 -1.71229021177222E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.0339076312331745" />
+      <inertia
+        ixx="2.05435483653573E-06"
+        ixy="5.95632163786679E-08"
+        ixz="-1.02554981086073E-09"
+        iyy="7.32153956073325E-06"
+        iyz="-4.55244680277536E-10"
+        izz="5.99935669564406E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://left arm assembly with suction gripper/meshes/forearm_motor_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.6 0.6 0.6 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://left arm assembly with suction gripper/meshes/forearm_motor_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="forearm_motor_joint"
+    type="fixed">
+    <origin
+      xyz="0.112022284987381 -0.000582076559940196 0.0902650079093743"
+      rpy="-0.00705925968502346 -0.679848014235928 0.00250719695359604" />
+    <parent
+      link="deltoid_link" />
+    <child
+      link="forearm_motor_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="forearm_link">
+    <inertial>
+      <origin
+        xyz="0.0479880896465921 0.0169973988307247 -0.0536211630209928"
+        rpy="0 0 0" />
+      <mass
+        value="0.0710703697522526" />
+      <inertia
+        ixx="1.64169959255092E-05"
+        ixy="-1.5342948001505E-07"
+        ixz="3.4914256414623E-06"
+        iyy="1.44052462847952E-05"
+        iyz="2.12277286599829E-07"
+        izz="1.56214792459402E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://left arm assembly with suction gripper/meshes/forearm_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://left arm assembly with suction gripper/meshes/forearm_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="forearm_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="forearm_motor_link" />
+    <child
+      link="forearm_link" />
+    <axis
+      xyz="-0.00872653549837449 -0.999961922950372 1.50861011923729E-05" />
+  </joint>
+  <link
+    name="wrist_motor_link">
+    <inertial>
+      <origin
+        xyz="-0.0127110312181783 0.0175648735080408 0.000151834871326043"
+        rpy="0 0 0" />
+      <mass
+        value="0.0339076297994024" />
+      <inertia
+        ixx="2.05435459609155E-06"
+        ixy="5.95699163629687E-08"
+        ixz="-5.0480890554938E-10"
+        iyy="7.3214462124238E-06"
+        iyz="1.11019650485597E-08"
+        izz="5.99944971351451E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://left arm assembly with suction gripper/meshes/wrist_motor_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.6 0.6 0.6 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://left arm assembly with suction gripper/meshes/wrist_motor_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wrist_motor_joint"
+    type="fixed">
+    <origin
+      xyz="0.0957821528097735 -0.000443334245739491 -0.107343792959189"
+      rpy="0.00099862903391098 0.840583196796735 0.00433957903414806" />
+    <parent
+      link="forearm_link" />
+    <child
+      link="wrist_motor_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="wrist_link">
+    <inertial>
+      <origin
+        xyz="0.0466663963248519 0.0168768366710255 0.0206296530657161"
+        rpy="0 0 0" />
+      <mass
+        value="0.0424602918209508" />
+      <inertia
+        ixx="9.42028039170047E-06"
+        ixy="-6.70187739565601E-08"
+        ixz="-1.08835461712535E-05"
+        iyy="3.2058732796883E-05"
+        iyz="-3.98223487250764E-08"
+        izz="2.93583845552867E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://left arm assembly with suction gripper/meshes/wrist_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.666666666666667 0.698039215686274 0.768627450980392 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://left arm assembly with suction gripper/meshes/wrist_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wrist_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="wrist_motor_link" />
+    <child
+      link="wrist_link" />
+    <axis
+      xyz="-0.00872653549837431 -0.99992385047757 -0.00872587097686362" />
+  </joint>
+  <link
+    name="suction_bracket_link">
+    <inertial>
+      <origin
+        xyz="0.00738658175553986 -2.0643209364124E-16 -2.8796409701215E-15"
+        rpy="0 0 0" />
+      <mass
+        value="0.00388793297464768" />
+      <inertia
+        ixx="1.3476530808007E-06"
+        ixy="9.55833453065481E-22"
+        ixz="-1.07533479631894E-20"
+        iyy="1.4877487924854E-06"
+        iyz="-7.27275007891491E-22"
+        izz="4.49288676745835E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://left arm assembly with suction gripper/meshes/suction_bracket_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://left arm assembly with suction gripper/meshes/suction_bracket_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="suction_bracket_joint"
+    type="fixed">
+    <origin
+      xyz="0.0998114431861098 0.0160960016344369 0.0440321054734492"
+      rpy="0.00953427957861754 -0.414732411272201 -0.0125688667027968" />
+    <parent
+      link="wrist_link" />
+    <child
+      link="suction_bracket_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="suction_grip_holder">
+    <inertial>
+      <origin
+        xyz="0.0230846639523238 0.00013558740555232 -0.000100000000003056"
+        rpy="0 0 0" />
+      <mass
+        value="0.00617567701342525" />
+      <inertia
+        ixx="1.0162276996496E-06"
+        ixy="-5.98486956235434E-11"
+        ixz="-6.53803556161913E-21"
+        iyy="8.41291114331174E-07"
+        iyz="8.39212224975138E-23"
+        izz="2.79050971511532E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://left arm assembly with suction gripper/meshes/suction_grip_holder.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://left arm assembly with suction gripper/meshes/suction_grip_holder.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="suction_grip_holder_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="suction_bracket_link" />
+    <child
+      link="suction_grip_holder" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="suction_vacuum">
+    <inertial>
+      <origin
+        xyz="0.0477090301286705 0.000124832807776405 -0.000100454784571852"
+        rpy="0 0 0" />
+      <mass
+        value="0.00764427101018877" />
+      <inertia
+        ixx="1.91207287159457E-07"
+        ixy="-3.13435352192754E-11"
+        ixz="-8.31701447825635E-11"
+        iyy="2.93557862318259E-06"
+        iyz="-1.81839978813647E-12"
+        izz="2.93558376677437E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://left arm assembly with suction gripper/meshes/suction_vacuum.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://left arm assembly with suction gripper/meshes/suction_vacuum.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="suction_vacuum_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="suction_grip_holder" />
+    <child
+      link="suction_vacuum" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>
