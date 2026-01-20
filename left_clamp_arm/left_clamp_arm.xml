@@ -24,13 +24,13 @@
         <joint range="0 0.8" armature="0.005" damping="0.1" solimplimit="0.95 0.99 0.001" solreflimit="0.005 1"/>
       </default>
       <default class="follower">
-        <joint range="-0.872664 0.872664" armature="0.001" pos="0 -0.018 0.0065" solimplimit="0.95 0.99 0.001" solreflimit="0.005 1"/>
+        <joint range="-3.14 3.14" armature="0.001" pos="0 0.00 0.0" solimplimit="0.95 0.99 0.001" solreflimit="0.005 1"/>
       </default>
       <default class="pivot_link">
         <joint range="-0.29670597283 0.8" armature="0.001" stiffness="0.05" springref="2.62" damping="0.00125"/>
       </default>
       <default class="coupler">
-        <joint range="-1.57 0" armature="0.001" solimplimit="0.95 0.99 0.001" solreflimit="0.005 1"/>
+        <joint range="-3.14 3.14" armature="0.001" solimplimit="0.95 0.99 0.001" solreflimit="0.005 1"/>
       </default>
 
       </default>
@@ -57,6 +57,8 @@
     <mesh name="pivot_2_link" file="pivot_2_link.STL"/>
     <mesh name="pivot_1_link" file="pivot_1_link.STL"/>
     <mesh name="pivot_4_link" file="pivot_4_link.STL"/>
+    <mesh name="pivot_5_link" file="pivot_5_link.STL"/>
+    <mesh name="pivot_6_link" file="pivot_6_link.STL"/>
     <!-- Collision meshes -->
     <mesh name="base_link_collision" file="base_link.STL"/>
     <mesh name="shoulder_motor_link_collision" file="shoulder_motor_link.STL"/>
@@ -78,7 +80,6 @@
     <body name="shoulder_motor_link" pos="0.02505 -3.1519E-05 0.040139">
     <inertial pos="0.011924 -0.00048792 0.013381" quat="-0.0190903 0.705417 0.0178052 0.708312" mass="0.05"
     diaginertia="1.44921e-05 1.2371e-05 7.59138e-06"/>
-    <joint name="shoulder_motor_joint" pos="0 0 0" axis="0 0 -1" range="-2.2 2.2"/>
     <geom mesh="shoulder_motor_link" class="visual" material="black"/>
     <!--<geom mesh="shoulder_motor_link_collision" class="collision"/> -->
 
@@ -92,7 +93,6 @@
     <body name="deltoid_motor_link" pos="0.0012519 -0.016837 -0.080078" euler="0.0010742 0.0069315 0.12341">
     <inertial pos="0.011924 -0.00048792 0.013381" quat="-0.0190903 0.705417 0.0178052 0.708312" mass="0.5"
     diaginertia="1.44921e-05 1.2371e-05 7.59138e-06"/>
-    <joint name="deltoid_motor_joint" pos="0 0 0" axis="0 0 -1" range="-2.2 2.2"/>
     <geom mesh="deltoid_motor_link" class="visual" material="black"/>
     <!--<geom mesh="deltoid_motor_link_collision" class="collision"/> -->
 
@@ -106,7 +106,6 @@
     <body name="forearm_motor_link" pos="0.128104821087058 -0.000722801873955833 0.0654655508370285" euler="-0.00447925955028608 -0.474038024854068 0.00108929805000388">
     <inertial pos="0.011924 -0.00048792 0.013381" quat="-0.0190903 0.705417 0.0178052 0.708312" mass="0.05"
     diaginertia="1.44921e-05 1.2371e-05 7.59138e-06"/>
-    <joint name="forearm_motor_joint" pos="0 0 0" axis="0 0 -1" range="-2.2 2.2"/>
     <geom mesh="forearm_motor_link" class="visual" material="black"/>
     <!--<geom mesh="forearm_motor_link_collision" class="collision"/> -->
 
@@ -120,57 +119,89 @@
     <body name="wrist_motor_link" pos="0.112516470710041 -0.000589104990071289 -0.0896482204395607" euler="-0.00181602262765292 0.671097523978476 0.0024046179049158">
     <inertial pos="0.011924 -0.00048792 0.013381" quat="-0.0190903 0.705417 0.0178052 0.708312" mass="0.05"
     diaginertia="1.44921e-05 1.2371e-05 7.59138e-06"/>
-    <joint name="wrist_motor_joint" pos="0 0 0" axis="0 0 -1" range="-2.2 2.2"/>
     <geom mesh="wrist_motor_link" class="visual" material="black"/>
     <!--<geom mesh="wrist_motor_link_collision" class="collision"/> -->
 
     <body name="wrist_link" pos="0 0 0">
-    <inertial pos="0.0133776171428082 0.0123058890407129 0.0167881487228331" quat="-0.0190903 0.705417 0.0178052 0.708312" mass="0.05"
-    diaginertia="1.44921e-05 1.2371e-05 7.59138e-06"/>
-    <joint name="wrist_joint" pos="0 0 0" axis="0 1 0" range="-2.2 2.2"/>
-    <geom mesh="wrist_link" class="visual" material="white"/>
-    <geom mesh="wrist_link_collision" class="collision"/>
+      <inertial pos="0.0133776171428082 0.0123058890407129 0.0167881487228331" quat="-0.0190903 0.705417 0.0178052 0.708312" mass="0.05"
+      diaginertia="1.44921e-05 1.2371e-05 7.59138e-06"/>
+      <joint name="wrist_joint" pos="0 0 0" axis="0 1 0" range="-2.2 2.2"/>
+      <geom mesh="wrist_link" class="visual" material="white"/>
+      <geom mesh="wrist_link_collision" class="collision"/>
 
-     <body name="main_gear_link" pos="0.166590198981601 0.0277949892185482 0.0673832956014138" euler="0.0100065342380608 -0.51136660021399 -0.0136239739409153">
-    <inertial pos="0.0133776171428082 0.0123058890407129 0.0167881487228331" quat="-0.0190903 0.705417 0.0178052 0.708312" mass="0.05"
-    diaginertia="1.44921e-05 1.2371e-05 7.59138e-06"/>
-    <joint name="main_gear_joint" pos="0 0 0" axis="0 0 1" range="-2.2 2.2"/>
-    <geom mesh="main_gear_link" class="visual" material="white"/>
-    <!--<geom mesh="main_gear_link_collision" class="collision"/>-->
-
-    <body name="clamp_gear_1_link" pos="0.0209247165550157 -0.00198460205949517 -0.00100000000003472" euler="0 0 0">
+      <body name="main_gear_link" pos="0.166590198981601 0.0277949892185482 0.0673832956014138" euler="0.0100065342380608 -0.51136660021399 -0.0136239739409153">
         <inertial pos="0.0133776171428082 0.0123058890407129 0.0167881487228331" quat="-0.0190903 0.705417 0.0178052 0.708312" mass="0.05"
         diaginertia="1.44921e-05 1.2371e-05 7.59138e-06"/>
-        <joint name="clamp_gear1_joint" pos="0 0 0" axis="0 0 1" range="-2.2 2.2"/>
-        <geom mesh="clamp_gear_1_link" class="visual" material="white"/>
-        <!--<geom mesh="clamp_gear_1_link_collision" class="collision"/>-->
-        <body name="pivot_3_link" pos="0.0371454613116111 0.0220557250405514 0.00440000000003429">
-        <inertial pos="0.0133776171428082 0.0123058890407129 0.0167881487228331" quat="-0.0190903 0.705417 0.0178052 0.708312" mass="0.05"
-        diaginertia="1.44921e-05 1.2371e-05 7.59138e-06"/>
-            <joint name="pivot_3_joint" pos="0 0 0" axis="0 0 1" range="-2.2 2.2"/>
-            <geom class="visual" mesh="pivot_3_link" material="black"/>
-            <geom class="collision" mesh="pivot_3_link"/>
-          <body name="pivot_2_link" pos="-0.0209999999999966 0.0210000000000035 0.00600000000000149">
-                <inertial mass="0.0125222" pos="0 -0.011046 0.0124786" quat="1 0.1664 0 0"
-                diaginertia="2.67415e-06 2.4559e-06 6.02031e-07"/>
-                <joint name="pivot_2_joint" class="follower"/>
-                <geom class="visual" mesh="pivot_2_link" material="black"/>
-                <!--<geom class="collision" mesh="pivot_2_link"/>-->
-          <body name="pivot_1_link" pos="-0.0371454592044878 -0.0220557217176893 0">
-                    <inertial mass="0.0125222" pos="0 -0.011046 0.0124786" quat="1 0.1664 0 0"
-                    diaginertia="2.67415e-06 2.4559e-06 6.02031e-07"/>
-                    <joint name="pivot_1_joint" class="follower"/>
-                    <geom class="visual" mesh="pivot_1_link" material="black"/>
-                    <!--<geom class="collision" mesh="pivot_1_link"/>-->
-        </body>
-        </body>
-        </body>
-      
-        
+        <joint name="main_gear_joint" type="hinge" pos="0 0 0" axis="0 0 1" range="-2.2 2.2"/>
+        <geom mesh="main_gear_link" class="visual" material="white"/>
+        <!--<geom mesh="main_gear_link_collision" class="collision"/>-->
       </body>
 
-    </body>
-    </body>
+      <body name="clamp_gear_1_link" pos="0.185262957112421 0.025564711010201 0.0768441281040912" euler="0.010009883029654 -0.511962445836945 -0.0136308131400829">
+        <inertial pos="0.0133776171428082 0.0123058890407129 0.0167881487228331" quat="-0.0190903 0.705417 0.0178052 0.708312" mass="0.05"
+        diaginertia="1.44921e-05 1.2371e-05 7.59138e-06"/>
+        <joint name="clamp_gear_1_joint" type="hinge" pos="0 0 0" axis="0 0 1" range="-2.2 2.2"/>
+        <geom mesh="clamp_gear_1_link" class="visual" material="white"/>
+        <!--<geom mesh="clamp_gear_1_link_collision" class="collision"/>-->
+        <!--gear 1 linkages-->
+        <body name="pivot_3_link" pos="0.0367790308829902 0.0226614913548656 0.00439999999999846">
+          <inertial pos="0.0133776171428082 0.0123058890407129 0.0167881487228331" quat="-0.0190903 0.705417 0.0178052 0.708312" mass="0.05"
+          diaginertia="1.44921e-05 1.2371e-05 7.59138e-06"/>
+              <joint name="pivot_3_joint" class="follower"/>
+              <geom class="visual" mesh="pivot_3_link" material="black"/>
+              <geom class="collision" mesh="pivot_3_link"/>
+          <body name="pivot_2_link" pos="-0.0210000000000002 0.0209999999999996 0.00599999999999966">
+                <inertial mass="0.0125222" pos="0 -0.011046 0.0124786" quat="1 0.1664 0 0"
+                diaginertia="2.67415e-06 2.4559e-06 6.02031e-07"/>
+                <joint name="pivot_2_joint" class="coupler"/>
+                <geom class="visual" mesh="pivot_2_link" material="black"/>
+                <!--<geom class="collision" mesh="pivot_2_link"/>-->
+          </body>  
+        </body>
+      </body>
+
+      <body name="clamp_gear_2_link" pos="0.184344772458808 0.00456131577695174 0.0779684900787611" euler="0.0100098830296008 -0.511962445836945 -0.0136308131400829">
+          <inertial pos="0.0133776171428082 0.0123058890407129 0.0167881487228331" quat="-0.0190903 0.705417 0.0178052 0.708312" mass="0.05"
+          diaginertia="1.44921e-05 1.2371e-05 7.59138e-06"/>
+          <joint name="clamp_gear_2_joint" type="hinge" pos="0 0 0" axis="0 0 -1" range="-2.2 2.2"/>
+          <geom mesh="clamp_gear_2_link" class="visual" material="white"/>
+          <!--<geom mesh="clamp_gear_2_link_collision" class="collision"/>-->
+          <!--gear 2 linkages-->
+          <body name="pivot_4_link" pos="0.0378811173604667 -0.0207668159428433 0.00440000000000104">
+              <inertial pos="0.0133776171428082 0.0123058890407129 0.0167881487228331" quat="-0.0190903 0.705417 0.0178052 0.708312" mass="0.05"
+              diaginertia="1.44921e-05 1.2371e-05 7.59138e-06"/>
+              <joint name="pivot_4_joint" class="follower"/>
+              <geom class="visual" mesh="pivot_4_link" material="black"/>
+              <geom class="collision" mesh="pivot_4_link"/>
+
+              <body name="pivot_5_link" pos="-0.0209999999999935 -0.0210000000000121 0.00600000000000173">
+                    <inertial mass="0.0125222" pos="0 -0.011046 0.0124786" quat="1 0.1664 0 0"
+                    diaginertia="2.67415e-06 2.4559e-06 6.02031e-07"/>
+                    <joint name="pivot_5_joint" class="coupler"/>
+                    <geom class="visual" mesh="pivot_5_link" material="black"/>
+                    <!--<geom class="collision" mesh="pivot_5_link"/>-->
+              </body>
+          </body>
+      </body>
+
+      <body name="pivot_1_link" pos="0.162044899299124 0.0467780031360545 0.0758058201748482" euler="0.010009883029654 -0.511962445836945 -0.0136308131400829">
+        <inertial pos="0.0133776171428082 0.0123058890407129 0.0167881487228331" quat="-0.0190903 0.705417 0.0178052 0.708312" mass="0.05"
+        diaginertia="1.44921e-05 1.2371e-05 7.59138e-06"/>
+        <joint name="pivot_1_joint" pos="0 0 0" axis="0 0 1" range="-2.2 2.2"/>
+        <geom class="visual" mesh="pivot_1_link" material="black"/>
+        <!--<geom class="collision" mesh="pivot_1_link"/>-->
+      </body>
+
+      <body name="pivot_6_link" pos="0.161495128927841 -0.0162171992101066 0.0752560621276163" euler="0.010009883029654 -0.511962445836945 -0.0136308131400829">
+      <inertial mass="0.0125222" pos="0 -0.011046 0.0124786" quat="1 0.1664 0 0"
+      diaginertia="2.67415e-06 2.4559e-06 6.02031e-07"/>
+      <joint name="pivot_6_joint" pos="0 0 0" axis="0 0 1" range="-2.2 2.2"/>
+      <geom class="visual" mesh="pivot_6_link" material="black"/>
+      <!--<geom class="collision" mesh="pivot_6_link"/>-->
+      </body>
+
+
+    </body>          
     </body>
     </body>
     </body>
@@ -180,14 +211,7 @@
     </body>
     </body>
   </worldbody>
-  <!-- Actuator definitions-->
-  <actuator>
-    <position class="left_clamp_arm" name="shoulder" joint="shoulder_joint" forcerange="-87 87"/>
-    <position class="left_clamp_arm" name="deltoid" joint="deltoid_joint" forcerange="-87 87"/>
-    <position class="left_clamp_arm" name="forearm" joint="forearm_joint" forcerange="-87 87"/>
-    <position class="left_clamp_arm" name="wrist" joint="wrist_joint" forcerange="-87 87"/>
 
-  </actuator>
 
   <contact>
     <exclude name="exclude_base_shoulder" body1="base_link" body2="shoulder_link"/>
@@ -200,11 +224,48 @@
     <exclude name="exclude_wrist_pivot2" body1="wrist_link" body2="pivot_2_link"/>
     <exclude name="exclude_pivot_links" body1="pivot_1_link" body2="pivot_2_link"/>
     <exclude name="exclude_pivot_links_2" body1="pivot_2_link" body2="pivot_3_link"/>
+
+    <exclude name="exclude_wrist_pivot3" body1="wrist_link" body2="pivot_5_link"/>
+    <exclude name="exclude_wrist_pivot4" body1="wrist_link" body2="pivot_6_link"/>
+    <exclude name="exclude_pivot_link_3" body1="pivot_5_link" body2="pivot_6_link"/>
+    <exclude name="exclude_pivot_links_$" body1="pivot_5_link" body2="pivot_4_link"/>
+
+
+
     <!--<exclude name="exclude_clamp_gear1_clamp_gear2" body1="clamp_gear_1_link" body2="clamp_gear_2_link"/>
     <exclude name="exclude_clamp_gear2_pivot" body1="clamp_gear_2_link" body2="pivot_3_link"/>-->
 
 
   </contact>
+
+    <tendon>
+    <fixed name="split">
+      <joint joint="clamp_gear_1_joint" coef="0.5"/>
+      <joint joint="clamp_gear_2_joint" coef="0.5"/>
+    </fixed>
+  </tendon>
+
+    <equality>
+    <connect anchor="0 0 0" body1="pivot_1_link" body2="pivot_2_link" solimp="0.95 0.99 0.001" solref="0.005 1"/>
+    <connect anchor="0 0 0" body1="pivot_6_link" body2="pivot_5_link" solimp="0.95 0.99 0.001" solref="0.005 1"/>
+    <joint joint1="clamp_gear_1_joint" joint2="clamp_gear_2_joint" polycoef="0 1 0 0 0" solimp="0.95 0.99 0.001"
+      solref="0.005 1"/>
+  </equality>
+
+
+
+  <!-- Actuator definitions-->
+  <actuator>
+    <position class="left_clamp_arm" name="shoulder" joint="shoulder_joint" forcerange="-87 87"/>
+    <position class="left_clamp_arm" name="deltoid" joint="deltoid_joint" forcerange="-87 87"/>
+    <position class="left_clamp_arm" name="forearm" joint="forearm_joint" forcerange="-87 87"/>
+    <position class="left_clamp_arm" name="wrist" joint="wrist_joint" forcerange="-87 87"/>
+    <position class="left_clamp_arm" name="main_gear" joint="main_gear_joint" forcerange="-87 87"/>
+    <general class="left_clamp_arm" name="fingers_actuator" tendon="split" forcerange="-87 87" ctrlrange="-168 255"
+  gainprm="0.3137255 0 0" biasprm="0 -100 -10"/>
+
+    
+  </actuator>
 
 
   <keyframe>
